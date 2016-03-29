@@ -4,7 +4,7 @@ echo ">>> Desligando o firewall"
 sudo systemctl disable firewalld
 sudo systemctl stop firewalld
 
-echo ">>> Adicionando novos repositorios ao yum"
+echo ">>> Adicionando novos repositorios ao yum - php56w"
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
