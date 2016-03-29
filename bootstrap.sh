@@ -19,4 +19,5 @@ sudo systemctl enable httpd
 sudo systemctl start httpd
 
 echo ">>> Instalando o PHP5.6"
+sudo yum -y install php56w php56w-opcache php56w-intl php56w-pdo php56w-pecl-xdebug php56w-xml php56w-mbstring php56w-process
 
