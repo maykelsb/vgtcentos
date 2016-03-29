@@ -16,7 +16,7 @@ sudo yum -y install httpd httpd-devel
 
 echo ">>> Ativando inicializacao automatica do apache"
 sudo systemctl enable httpd
-sudo systemctl stop httpd
+sudo systemctl start httpd
 
 echo ">>> Instalando o PHP5.6"
 
