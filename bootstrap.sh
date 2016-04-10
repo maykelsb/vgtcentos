@@ -17,11 +17,10 @@ echo ">>> Adicionando novos repositorios ao yum"
 sudo rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm http://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 echo "==============================================================================="
 
-# Economizando espaço em disco - a coisa está feia =/
-#echo "==============================================================================="
-#echo ">>> Atualizando o cache do yum"
-#sudo yum makecache fast
-#echo "==============================================================================="
+echo "==============================================================================="
+echo ">>> Atualizando metadatas dos repositórios yum"
+sudo yum makecache fast
+echo "==============================================================================="
 
 # Está quebrando a montagem de /vagrant
 #echo "==============================================================================="
