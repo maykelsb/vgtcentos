@@ -32,17 +32,14 @@ Vagrant.configure(2) do |config|
 
   
   # Provisionando o PHP5.6
-#  config.vm.provision :shell, path: "scripts/php.sh", args: php_timezone
+  config.vm.provision :shell, path: "scripts/php.sh", args: php_timezone
   
   # Provisionando o Composer
-#  config.vm.provision :shell, path: "scripts/composer.sh"
+  config.vm.provision :shell, path: "scripts/composer.sh"
   
   # Provisionando o Bower
 #  config.vm.provision :shell, path: "scripts/bower.sh"
 
   # Provisionando o Symfony
 #  config.vm.provision :shell, path: "scripts/symfony.sh", args: symfony_root
-
-  # Provisionando o Git
-#  config.vm.provision :shell, path: "scripts/git.sh", args: [git_url, public_folder]
 end
