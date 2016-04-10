@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
 echo "==============================================================================="
+echo ">>> Checando se o composer está instalado"
+if type composer > /dev/null; then
+    echo ">>> O composer já está instalado. Executando atualização..."
+    sudo composer self-update
+    echo "==============================================================================="
+    exit 0
+fi
 echo ">>> Instalando o composer"
 echo ">>> Verificando se o PHP está instalado"
 if ! type php > /dev/null; then
