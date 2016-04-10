@@ -13,9 +13,12 @@ symfony_folder = "/vagrant/symfony"
 
 # Configurações do repositório do projeto
 git_site = "github.com" #bitbucket.org
-git_user = ""
-git_repo = ""
+git_user = "maykelsb"
+git_repo = "colecoes"
 git_url = "https://#{git_site}/#{git_user}/#{git_repo}.git"
+
+# Hash composer
+hash_composer = "7228c001f88bee97506740ef0888240bd8a760b046ee16db8f4095c0d8d525f2367663f22a46b48d072c816e7fe19959"
 
 Vagrant.configure(2) do |config|
   config.vm.box = "matyunin/centos7"
@@ -28,13 +31,13 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "scripts/apache.sh"
 
   # Configurando VHOST do projeto - repita para cada projeto
-  config.vm.provision :shell, path: "scripts/hvost.sh", args: git_repo
+  config.vm.provision :shell, path: "scripts/vhost.sh", args: git_repo
   
   # Provisionando o PHP5.6
   config.vm.provision :shell, path: "scripts/php.sh", args: php_timezone
   
   # Provisionando o Composer
-  config.vm.provision :shell, path: "scripts/composer.sh"
+  config.vm.provision :shell, path: "scripts/composer.sh", args: hash_composer
 
   # Provisionando o NPM
   config.vm.provision :shell, path: "scripts/npm.sh"
