@@ -31,8 +31,3 @@ echo "==========================================================================
 echo ">>> Instalando wget e curl"
 echo "==============================================================================="
 sudo yum install wget curl
-
-#echo "==============================================================================="
-#echo ">>> Fix de mapeamento do virtualbox"
-#echo "==============================================================================="
-#sudo ln -s /opt/VBoxGuestAdditions-4.3.20/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
