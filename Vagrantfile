@@ -12,9 +12,9 @@ public_folder = "/vagrant"
 symfony_folder = "/vagrant/symfony"
 
 # Configurações do repositório do projeto
-git_site = "github.com"
-git_user = "maykelsb"
-git_repo = "colecoes"
+git_site = "github.com" #bitbucket.org
+git_user = ""
+git_repo = ""
 git_url = "https://#{git_site}/#{git_user}/#{git_repo}.git"
 
 Vagrant.configure(2) do |config|
@@ -29,7 +29,6 @@ Vagrant.configure(2) do |config|
 
   # Configurando VHOST do projeto - repita para cada projeto
   config.vm.provision :shell, path: "scripts/hvost.sh", args: git_repo
-
   
   # Provisionando o PHP5.6
   config.vm.provision :shell, path: "scripts/php.sh", args: php_timezone
@@ -44,5 +43,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "scripts/bower.sh"
 
   # Provisionando o Symfony
-#  config.vm.provision :shell, path: "scripts/symfony.sh", args: symfony_root
+  config.vm.provision :shell, path: "scripts/symfony.sh"
 end
