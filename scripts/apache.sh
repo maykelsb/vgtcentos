@@ -6,14 +6,14 @@ sudo yum -y install httpd httpd-devel
 echo "==============================================================================="
 
 echo "==============================================================================="
-echo ">>> Ativando inicializacao automatica do apache"
-sudo systemctl enable httpd
-sudo systemctl start httpd
+echo ">>> Adicionando o usuário vagrant ao grupo do apache"
+sudo usermod -a -G apache vagrant
 echo "==============================================================================="
 
 echo "==============================================================================="
-echo ">>> Adicionando o usuário vagrant ao grupo do apache"
-sudo usermod -a -G apache vagrant
+echo ">>> Ativando inicializacao automatica do apache"
+sudo systemctl enable httpd
+sudo systemctl start httpd
 echo "==============================================================================="
 
 # Configuração geral de vhosts
