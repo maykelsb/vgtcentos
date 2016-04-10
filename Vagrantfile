@@ -36,9 +36,12 @@ Vagrant.configure(2) do |config|
   
   # Provisionando o Composer
   config.vm.provision :shell, path: "scripts/composer.sh"
+
+  # Provisionando o NPM
+  config.vm.provision :shell, path: "scripts/npm.sh"
   
   # Provisionando o Bower
-#  config.vm.provision :shell, path: "scripts/bower.sh"
+  config.vm.provision :shell, path: "scripts/bower.sh"
 
   # Provisionando o Symfony
 #  config.vm.provision :shell, path: "scripts/symfony.sh", args: symfony_root
