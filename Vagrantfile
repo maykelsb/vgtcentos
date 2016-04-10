@@ -45,6 +45,11 @@ Vagrant.configure(2) do |config|
   # Provisionando o Bower
   config.vm.provision :shell, path: "scripts/bower.sh"
 
-  # Provisionando o Symfony
+  # Provisionando o Symfony Installer
   config.vm.provision :shell, path: "scripts/symfony.sh"
+
+  # Criando um novo projeto Symfony
+  # CUIDADO: este provisionamento irá apagar o diretório /var/www/#{git_repo} e todo seu conteúdo
+  #config.vm.provision :shell, path: "scripts/symfony/start.sh", args: git_repo
+
 end
