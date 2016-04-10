@@ -5,14 +5,14 @@
 echo "==============================================================================="
 echo ">>> Criando a pasta do projeto (/var/www/${1}) e alterando permissões"
 sudo mkdir -p /var/www/$1/web
-sudo chown -R vagrat:apache /var/www/$1
-sudo chmod -R 755 /var/www
+sudo chown -R vagrant:apache /var/www/$1
+sudo chmod -R 775 /var/www
 echo "==============================================================================="
 
 echo "==============================================================================="
 echo ">>> Criando página demo"
-touch /var/www/$1/web/index.php
-echo "Bem vindo a ${1}" >> /var/www/$1/web/index.php
+touch /var/www/$1/web/index.html
+echo "Bem vindo a ${1}" >> /var/www/$1/web/index.html
 echo "==============================================================================="
 
 echo "==============================================================================="
@@ -28,12 +28,17 @@ echo "==========================================================================
 
 echo "==============================================================================="
 echo ">>> Alterando permissões da pasta de log"
-sudo chown -R vagrat:apache /var/www/log/$1
-sudo chmod -R 755 /var/www/log/$1
+sudo chown -R vagrant:apache /var/www/log/$1
+sudo chmod -R 775 /var/www/log/$1
 echo "==============================================================================="
 
+# @todo: Verificar a existência desses arquivos antes de criá-los
 echo "==============================================================================="
 echo ">>> Criando arquivo /etc/httpd/sites-available/${1}.conf"
+if [ -f /etc/httpd/sites-available/$1.conf ]; then
+    echo "ERRO: O arquivo /etc/httpd/sites-available/${1}.conf já existe. Abortando o provisionamento do VHOST"
+    exit 1
+fi
 sudo touch /etc/httpd/sites-available/$1.conf
 sudo echo "<VirtualHost *:80>" >> /etc/httpd/sites-available/$1.conf
 sudo echo "    ServerName ${1}" >> /etc/httpd/sites-available/$1.conf
