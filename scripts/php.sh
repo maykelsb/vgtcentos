@@ -17,6 +17,3 @@ if type httpd > /dev/null; then
   sudo httpd -k restart
 fi
 echo "==============================================================================="
-
-# @todo Setar as configurações do PHP para development
-
