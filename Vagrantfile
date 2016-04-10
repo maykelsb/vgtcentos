@@ -25,7 +25,11 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "bootstrap.sh"#, args: yum_repositories
 
   # Provisionando o APACHE
-  config.vm.provision :shell, path: "scripts/apache.sh", args: git_repo
+  config.vm.provision :shell, path: "scripts/apache.sh"
+
+  # Configurando VHOST do projeto - repita para cada projeto
+  config.vm.provision :shell, path: "scripts/hvost.sh", args: git_repo
+
   
   # Provisionando o PHP5.6
 #  config.vm.provision :shell, path: "scripts/php.sh", args: php_timezone
