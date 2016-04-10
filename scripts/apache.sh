@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 echo "==============================================================================="
 echo ">>> Instalando apache"
 sudo yum -y install httpd httpd-devel
