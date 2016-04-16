@@ -12,7 +12,7 @@ sudo sed -i 's/Group apache/Group vagrant/g' /etc/httpd/conf/httpd.conf
 sudo sed -i 's/User apache/User vagrant/g' /etc/httpd/conf/httpd.conf
 
 echo ">>> Configurando o ServerName para ${1}"
-sudo sed -i 's/#ServerName www.example.com/ServerName ${1}:80/g' /etc/httpd/conf/httpd.conf
+sudo sed -i 's/#ServerName www.example.com/ServerName ${1}/g' /etc/httpd/conf/httpd.conf
 
 echo ">>> Ativando inicializacao automatica do apache"
 sudo systemctl enable httpd
