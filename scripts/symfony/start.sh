@@ -25,5 +25,5 @@ echo ">>> Tirando restrições de acesso do app_dev.php"
 sed --in-place '10,19d' /var/www/$1/web/app_dev.php
 
 echo ">>> Tirando restrições de acesso do config.php"
-sed --in-place '13,23d' web/config.php
+sed --in-place '13,23d' /var/www/$1/web/config.php
 echo "==============================================================================="
