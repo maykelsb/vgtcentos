@@ -17,6 +17,9 @@ git_user = "maykelsb"
 git_repo = "colecoes"
 git_url = "https://#{git_site}/#{git_user}/#{git_repo}.git"
 
+# Apache ServerName
+httpd_servername = "apacheserv"
+
 # Hash composer
 hash_composer = "7228c001f88bee97506740ef0888240bd8a760b046ee16db8f4095c0d8d525f2367663f22a46b48d072c816e7fe19959"
 
@@ -28,11 +31,14 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "bootstrap.sh"#, args: yum_repositories
 
   # Provisionando o APACHE
-  config.vm.provision :shell, path: "scripts/apache.sh"
+  config.vm.provision :shell, path: "scripts/apache.sh", args: httpd_servername
 
   # Configurando VHOST do projeto - repita para cada projeto
   config.vm.provision :shell, path: "scripts/vhost.sh", args: git_repo
   
+  # Adicionando o vhost ao /etc/hosts da vm
+  config.vm.provision :shell, path: "scripts/hosts.sh", args: git_repo
+
   # Provisionando o PHP5.6
   config.vm.provision :shell, path: "scripts/php.sh", args: php_timezone
   
@@ -51,5 +57,11 @@ Vagrant.configure(2) do |config|
   # Criando um novo projeto Symfony
   # CUIDADO: este provisionamento irá apagar o diretório /var/www/#{git_repo} e todo seu conteúdo
   #config.vm.provision :shell, path: "scripts/symfony/start.sh", args: git_repo
+
+  # Provisionamento de apps diversos: telnet
+  config.vm.provision :shell, path: "scripts/apps/telnet.sh"
+
+  # Provisionamento de apps diversos: lynx - navegador de linha de comando
+  config.vm.provision :shell, path: "scripts/apps/lynx.sh"
 
 end
