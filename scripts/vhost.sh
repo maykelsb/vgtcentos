@@ -30,8 +30,8 @@ sudo echo "<VirtualHost *:80>" >> /etc/httpd/sites-available/$1.conf
 sudo echo "    ServerName ${1}" >> /etc/httpd/sites-available/$1.conf
 sudo echo "    ServerAlias ${1}" >> /etc/httpd/sites-available/$1.conf
 sudo echo "    DocumentRoot /var/www/${1}/web" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    ErrorLog /var/www/log/${1}/error.log" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    CustomLog /var/www/log/${1}/requests.log combined" >> /etc/httpd/sites-available/$1.conf
+sudo echo "    ErrorLog /var/log/httpd/${1}_error.log" >> /etc/httpd/sites-available/$1.conf
+sudo echo "    CustomLog /var/log/httpd/${1}_requests.log combined" >> /etc/httpd/sites-available/$1.conf
 sudo echo "</VirtualHost>" >> /etc/httpd/sites-available/$1.conf
 
 echo ">>> Habilitando vhost /etc/httpd/sites-enabled/${1}.conf"
