@@ -1,5 +1,6 @@
 # vgtcentos
 Provisionamento de uma máquina CENTOS7 com bash
+
 Info
 * Provider: virtual box
 * Box: matyunin/centos7
@@ -13,3 +14,9 @@ Scripts disponíveis
 * Componser
 * Bower
 * Symfony installer
+* Apps
+* * Lynx
+* * Telnet
+* 
+
+Colaborações são muito bem vindas!! ^^
