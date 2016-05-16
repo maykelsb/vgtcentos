@@ -3,14 +3,13 @@
 echo "==============================================================================="
 # Instruções de instalação: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/
 echo ">>> Instalando o repositório com o mongodb3.2"
-repoFile = /etc/yum.repos.d/mongodb-org-3.2.repo
-sudo touch $repoFile
-sudo echo "[mongodb-org-3.2]" >> $repoFile
-sudo echo "name=MongoDB Repository" >> $repoFile
-sudo echo "baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/" >> $repoFile
-sudo echo "gpgcheck=1" >> $repoFile
-sudo echo "enabled=1" >> $repoFile
-sudo echo "gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc" >> $repoFile
+sudo touch /etc/yum.repos.d/mongodb-org-3.2.repo
+sudo echo "[mongodb-org-3.2]" >> /etc/yum.repos.d/mongodb-org-3.2.repo
+sudo echo "name=MongoDB Repository" >> /etc/yum.repos.d/mongodb-org-3.2.repo
+sudo echo "baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/" >> /etc/yum.repos.d/mongodb-org-3.2.repo
+sudo echo "gpgcheck=1" >> /etc/yum.repos.d/mongodb-org-3.2.repo
+sudo echo "enabled=1" >> /etc/yum.repos.d/mongodb-org-3.2.repo
+sudo echo "gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc" >> /etc/yum.repos.d/mongodb-org-3.2.repo
 
 echo ">>> Instalando o pacote mongodb3.2 completo"
 sudo yum install -y mongodb-org
