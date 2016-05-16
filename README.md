@@ -7,16 +7,15 @@ Info
 * Provisioning: bash
 
 Scripts disponíveis
-* Apache
-* VHOSTs
+* Apache (10080) + VHOSTs
 * PHP
+* Composer
 * NPM
-* Componser
 * Bower
 * Symfony installer
 * Apps
-* * Lynx
-* * Telnet
-* 
+* + Lynx
+* + Telnet
+* MongoDB (27017)
 
 Colaborações são muito bem vindas!! ^^
