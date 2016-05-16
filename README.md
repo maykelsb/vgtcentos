@@ -7,6 +7,7 @@ Info
 * Provisioning: bash
 
 Scripts disponíveis
+* wget + cUrl
 * Apache (10080) + VHOSTs
 * PHP
 * Composer
