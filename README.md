@@ -14,8 +14,8 @@ Scripts disponíveis
 * Bower
 * Symfony installer
 * Apps
-* + Lynx
-* + Telnet
+* | - Lynx
+* | - Telnet
 * MongoDB (27017)
 
 Colaborações são muito bem vindas!! ^^
