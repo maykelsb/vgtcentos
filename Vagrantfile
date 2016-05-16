@@ -7,21 +7,17 @@
 # Timezone utilizada pelo PHP, o valor deve ser setado depois de instalar
 php_timezone = "America/Sao_Paulo"
 
-# Diretórios web
-public_folder = "/vagrant"
-symfony_folder = "/vagrant/symfony"
-
 # Configurações do repositório do projeto
-git_site = "github.com" #bitbucket.org
-git_user = "maykelsb"
-git_repo = "oficinamongo"
+git_site = "" #bitbucket.org #github.com
+git_user = ""
+git_repo = ""
 git_url = "https://#{git_site}/#{git_user}/#{git_repo}.git"
 
 # Apache ServerName
 httpd_servername = "apacheserv"
 
 # Hash composer
-hash_composer = "a52be7b8724e47499b039d53415953cc3d5b459b9d9c0308301f867921c19efc623b81dfef8fc2be194a5cf56945d223"
+hash_composer = "92102166af5abdb03f49ce52a40591073a7b859a86e8ff13338cf7db58a19f7844fbc0bb79b2773bf30791e935dbd938"
 
 Vagrant.configure(2) do |config|
   config.vm.box = "matyunin/centos7"
