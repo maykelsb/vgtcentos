@@ -29,6 +29,7 @@ Se precisar provisionar código fonte do host para o guest, use a seguinte estru
 
 Caso contrário, basta criar um diretório para o projeto e mandar um git clone. Nos dois casos, entre no diretório "projeto" e execute o comando:
 > git clone https://github.com/maykelsb/vgtcentos.git .
-Quando terminar o clone, edite o arquivo `Vagrantfile` e descomente os provisionamentos que vai utilizar.
+
+Quando terminar o clone, edite o arquivo `Vagrantfile` e descomente os provisionamentos que vai utilizar. No começo do arquivo, tem algumas variáveis que precisam ser preenchidas.
 
 Colaborações são muito bem vindas!! ^^
