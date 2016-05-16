@@ -54,6 +54,9 @@ Vagrant.configure(2) do |config|
   # Provisionando o Bower
   #config.vm.provision :shell, path: "scripts/bower.sh"
 
+  # Provisionando o Grunt
+  #config.vm.provision :shell, path: "scripts/grunt.sh"
+
   # Provisionando o Symfony Installer
   #config.vm.provision :shell, path: "scripts/symfony.sh"
 
