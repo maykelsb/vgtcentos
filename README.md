@@ -1,7 +1,7 @@
 # vgtcentos
 Provisionamento de uma máquina CENTOS7 com bash
 
-Info
+## Info ##
 * Provider: virtual box
 * Box: matyunin/centos7
 * Provisioning: bash
