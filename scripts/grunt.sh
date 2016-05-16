@@ -7,7 +7,7 @@ if ! type npm > /dev/null; then
     exit 1
 fi
 
-echo ">>> Instalando o composer"
+echo ">>> Instalando o grunt"
 sudo npm install -g grunt-cli
 echo "==============================================================================="
 
