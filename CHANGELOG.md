@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.2.0] - [2016-05-16]
+## [0.2.0] - 2016-05-16
 ### Added
 * Grunt
 * MongoDB 3.2
@@ -14,7 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 * Unused variables in Vagrantfile
 
-## 0.1.0 - [2016-04-16]
+## 0.1.0 - 2016-04-16
 ### Added
 * Apache
 * vHosts
