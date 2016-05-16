@@ -23,7 +23,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "matyunin/centos7"
 
   # pasta de projeto
-  config.vm.synced_folder "../src_#{git_repo}", "/var/www/#{git_repo}"
+  #config.vm.synced_folder "../src_#{git_repo}", "/var/www/#{git_repo}"
 
   # Desligando o firewall, adicionando novos repositorios e atualizando pacotes instalados
   config.vm.provision :shell, path: "bootstrap.sh"#, args: yum_repositories
