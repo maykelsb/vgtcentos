@@ -4,6 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.0] - [2016-05-16]
+### Added
+* Grunt
+* MongoDB 3.2
+* README.md use instructions
+
+### Removed
+* Unused variables in Vagrantfile
+
 ## 0.1.0 - [2016-04-16]
 ### Added
 * Apache
@@ -15,6 +24,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * npm
 * Bower
 * Composer
+* lynx
+* telnet
 
 
 
