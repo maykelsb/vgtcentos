@@ -11,8 +11,10 @@ Scripts disponíveis
 * Apache (10080) + VHOSTs
 * PHP
 * Composer
-* NPM
-* Bower
+* JS
+* | - NPM
+* | - Bower
+* | - Grunt
 * Symfony installer
 * Apps
 * | - Lynx
