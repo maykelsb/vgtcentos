@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Grunt
 * MongoDB 3.2
 * README.md use instructions
+* CHANGELOG.md
 
 ### Removed
 * Unused variables in Vagrantfile
