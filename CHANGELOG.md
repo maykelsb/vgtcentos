@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * README.md use instructions
 * CHANGELOG.md
 * Turning off SELinux
+* Extension pecl php_mongodb 1.1.6
 
 ### Removed
 * Unused variables in Vagrantfile
