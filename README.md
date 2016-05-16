@@ -10,7 +10,7 @@ Provisionamento de uma máquina CENTOS7 com bash
 * wget + cUrl
 * Apache (10080) + VHOSTs
 * PHP
-* | Pecl php_mongodb 1.1.6
+* | - Pecl php_mongodb 1.1.6
 * Composer
 * JS
 * | - NPM
