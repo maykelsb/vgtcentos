@@ -13,7 +13,7 @@ sudo sed -i 's/display_errors = Off/display_errors = On/g' /etc/php.ini
 
 # Se o apache estiver instalado, reinicia-o
 if type httpd > /dev/null; then
-    if [ -f /etc/httpd/conf.d/php.conf ] then
+    if [ -f /etc/httpd/conf.d/php.conf ]; then
         echo ">>> Anulando as modificações do diretório de arquivos de sessão"
         sed --in-place '24,25d' /etc/httpd/conf.d/php.conf
     fi
