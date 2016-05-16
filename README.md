@@ -32,4 +32,7 @@ Caso contrário, basta criar um diretório para o projeto e mandar um git clone.
 
 Quando terminar o clone, edite o arquivo `Vagrantfile` e descomente os provisionamentos que vai utilizar. No começo do arquivo, tem algumas variáveis que precisam ser preenchidas.
 
+**Importante**: Para utilizar o Apache, não se esqueça de fazer o redirecionamento do `hosts` na máquina host.
+
+
 Colaborações são muito bem vindas!! ^^
