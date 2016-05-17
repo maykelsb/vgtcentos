@@ -37,7 +37,7 @@ As variáveis que precisam ser preenchidas são:
 * `git_repo`: utilizada para várias configurações de host e vhost, além de ser utilizada para mapeamento do diretório de src_ do projeto
 * `hash_composer`: hash utilizado para verificar a instalação do composer, deve corresponder sempre à última do getcomposer.org
 
-As demais variáveis não precisa ser alteradas.
+As demais variáveis não precisam ser alteradas.
 
 
 **Importante**: Para utilizar o Apache, não se esqueça de fazer o redirecionamento do `hosts` na máquina host.
