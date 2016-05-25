@@ -68,9 +68,9 @@ Vagrant.configure(2) do |config|
 
   # Provisionamento do MongoDB 3.2
   #config.vm.network "forwarded_port", guest: 27017, host: 27017
-  #config.vm.provision :shell, path: "scripts/mongodb.sh"
+  #config.vm.provision :shell, path: "scripts/databases/mongodb.sh"
 
   # Provisionamento do MariaDB
   #config.vm.network "forwarded_port", guest: 3306, host: 13306
-  #config.vm.provision :shell, path: "scripts/mariadb.sh"
+  #config.vm.provision :shell, path: "scripts/databases/mariadb.sh"
 end
