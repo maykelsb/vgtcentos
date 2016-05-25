@@ -14,7 +14,7 @@ echo ">>> Criando o usuario ${1} com senha '${1}'"
 mysql -uroot -e "CREATE USER ${1}@localhost IDENTIFIED BY '${1}';"
 
 echo ">>> Definindo permissões"
-mysql -uroot -e "GRANT ALL PRIVILEGES ON ${1}.* to '${1}'@'localhost';"
+mysql -uroot -e "GRANT ALL PRIVILEGES ON ${1}.* to '${1}'@'%';"
 mysql -uroot -e "FLUSH PRIVILEGES;"
 
 echo ">>> Verificando se tem o PHP instalado para adicionar o drive de comunicação"
