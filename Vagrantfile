@@ -72,5 +72,5 @@ Vagrant.configure(2) do |config|
 
   # Provisionamento do MariaDB
   #config.vm.network "forwarded_port", guest: 3306, host: 13306
-  #config.vm.provision :shell, path: "scripts/databases/mariadb.sh"
+  #config.vm.provision :shell, path: "scripts/databases/mariadb.sh", args: git_repo
 end
