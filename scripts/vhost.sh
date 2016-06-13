@@ -23,7 +23,7 @@ touch /var/log/httpd/$1_requests.log
 echo ">>> Criando arquivo /etc/httpd/sites-available/${1}.conf"
 if [ -f /etc/httpd/sites-available/$1.conf ]; then
     echo "ERRO: O arquivo /etc/httpd/sites-available/${1}.conf já existe. Abortando o provisionamento do VHOST"
-    exit 1
+    return 0;
 fi
 sudo touch /etc/httpd/sites-available/$1.conf
 sudo echo "<VirtualHost *:80>" >> /etc/httpd/sites-available/$1.conf
