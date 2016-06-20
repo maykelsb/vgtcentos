@@ -1,5 +1,5 @@
 # Configurações do projeto
-projectname = "pprobat"
+projectname = ""
 
 # Timezone utilizada pelo PHP, o valor deve ser setado depois de instalar
 php_timezone = "America/Sao_Paulo"
