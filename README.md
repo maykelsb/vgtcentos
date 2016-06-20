@@ -34,11 +34,9 @@ Caso contrário, basta criar um diretório para o projeto e mandar um git clone.
 Quando terminar o clone, edite o arquivo `Vagrantfile` e descomente os provisionamentos que vai utilizar. No começo do arquivo, tem algumas variáveis que precisam ser preenchidas.
 
 As variáveis que precisam ser preenchidas são:
-* `git_repo`: utilizada para várias configurações de host e vhost, além de ser utilizada para mapeamento do diretório de src_ do projeto
-* `hash_composer`: hash utilizado para verificar a instalação do composer, deve corresponder sempre à última do getcomposer.org
+* `projectname`: utilizada para várias configurações de host e vhost, além de ser utilizada para mapeamento do diretório de src_ do projeto
 
-As demais variáveis não precisam ser alteradas.
-
+As demais variáveis não precisam, mas podem ser alteradas conforme sua necessidade.
 
 **Importante**: Para utilizar o Apache, não se esqueça de fazer o redirecionamento do `hosts` na máquina host.
 
