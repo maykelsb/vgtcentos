@@ -4,15 +4,17 @@ echo "==========================================================================
 echo ">>> Instalando apache"
 sudo yum -y install httpd httpd-devel
 
-#echo ">>> Adicionando o usuário vagrant ao grupo do apache"
-#sudo usermod -a -G apache vagrant
-
 echo "Trocando o usuário do apache para vagrant:vagrant"
 sudo sed -i 's/Group apache/Group vagrant/g' /etc/httpd/conf/httpd.conf
 sudo sed -i 's/User apache/User vagrant/g' /etc/httpd/conf/httpd.conf
 
 echo ">>> Configurando o ServerName para ${1}"
 sudo sed -i "s/#ServerName www.example.com/ServerName ${1}/g" /etc/httpd/conf/httpd.conf
+
+# Bug de virtualização com o apache
+# https://gist.github.com/falexandrou/8965063
+echo ">>> Desligando o sendfile"
+sudo sed -i "s/EnableSendfile on/EnableSendfile off/g" /etc/httpd/conf/httpd.conf
 
 echo ">>> Ativando inicializacao automatica do apache"
 sudo systemctl enable httpd

@@ -12,33 +12,22 @@ echo ">>> Criando página demo"
 touch /var/www/$1/web/index.html
 echo "Bem vindo a ${1}" >> /var/www/$1/web/index.html
 
-echo ">>> Criando pasta de logs (/var/www/log/${1})"
-sudo mkdir -p /var/log/httpd/$1
-
-echo ">>> Criando arquivos de log: error.log e requests.log"
-touch /var/log/httpd/$1_error.log
-touch /var/log/httpd/$1_requests.log
-
-# @todo: Verificar a existência desses arquivos antes de criá-los
 echo ">>> Criando arquivo /etc/httpd/sites-available/${1}.conf"
-if [ -f /etc/httpd/sites-available/$1.conf ]; then
-    echo "ERRO: O arquivo /etc/httpd/sites-available/${1}.conf já existe. Abortando o provisionamento do VHOST"
-    return 0;
-fi
-sudo touch /etc/httpd/sites-available/$1.conf
-sudo echo "<VirtualHost *:80>" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    ServerName ${1}" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    ServerAlias ${1}" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    DocumentRoot /var/www/${1}/web" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    ErrorLog /var/log/httpd/${1}_error.log" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    CustomLog /var/log/httpd/${1}_requests.log combined" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    <Directory \"/var/www/${1}/web\">" >> /etc/httpd/sites-available/$1.conf
-sudo echo "        AllowOverride All" >> /etc/httpd/sites-available/$1.conf
-sudo echo "    </Directory>" >> /etc/httpd/sites-available/$1.conf
-sudo echo "</VirtualHost>" >> /etc/httpd/sites-available/$1.conf
+if ! [ -f /etc/httpd/sites-available/$1.conf ]; then
+    sudo touch /etc/httpd/sites-available/$1.conf
+    sudo echo "<VirtualHost *:80>" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "    ServerName ${1}" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "    ServerAlias ${1}" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "    DocumentRoot /var/www/${1}/web" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "    <Directory \"/var/www/${1}/web\">" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "        AllowOverride All" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "        Require all granted" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "    </Directory>" >> /etc/httpd/sites-available/$1.conf
+    sudo echo "</VirtualHost>" >> /etc/httpd/sites-available/$1.conf
 
-echo ">>> Habilitando vhost /etc/httpd/sites-enabled/${1}.conf"
-sudo ln -s /etc/httpd/sites-available/$1.conf /etc/httpd/sites-enabled/$1.conf
+    echo ">>> Habilitando vhost /etc/httpd/sites-enabled/${1}.conf"
+    sudo ln -s /etc/httpd/sites-available/$1.conf /etc/httpd/sites-enabled/$1.conf
+fi
 
 echo ">>> Reiniciando o apache"
 sudo httpd -k restart
