@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
   #config.vm.synced_folder "../src_#{projectname}", "/var/www/#{projectname}"
 
   # Desligando o firewall, adicionando novos repositorios e atualizando pacotes instalados
-  #config.vm.provision :shell, path: "bootstrap.sh"#, args: yum_repositories
+  #config.vm.provision :shell, path: "bootstrap.sh"
 
   # Provisionando o APACHE
   #config.vm.network "forwarded_port", guest: 80, host: httpd_port
