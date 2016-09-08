@@ -31,8 +31,8 @@ if type php > /dev/null; then
     echo ">>> Instalando..."
     cd mongodb-1.1.6
     sudo pecl install mongodb
-    rm -rf mongodb-1.1.6
     cd ..
+    rm -rf mongodb-1.1.6
 
     echo ">>> Habilitando o módulo"
     sudo touch /etc/php.d/mongodb.ini
